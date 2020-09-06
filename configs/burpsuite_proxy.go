@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"net/url"
 	"time"
 )
 
@@ -22,18 +23,18 @@ func BurpProxy() *http.Client {
 	caCertPool := x509.NewCertPool()
 	caCertPool.AppendCertsFromPEM(caCert)
 
-	//proxy, err := url.Parse("http://127.0.0.1:8080")
-	//if err != nil {
-	//	log.Fatal(err)
-	//}
+	proxy, err := url.Parse("http://127.0.0.1:8080")
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	config := &tls.Config{
 		InsecureSkipVerify: true,
-		//RootCAs:            caCertPool,
+		RootCAs:            caCertPool,
 	}
 	tr := &http.Transport{
 		TLSClientConfig: config,
-		//Proxy:           http.ProxyURL(proxy),
+		Proxy:           http.ProxyURL(proxy),
 	}
 	client := &http.Client{
 		Transport: tr,

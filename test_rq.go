@@ -3,8 +3,6 @@ package main
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
 )
@@ -41,6 +39,7 @@ func main(){
 	if err != nil {
 		log.Fatalln(err)
 	}
-	body, _ := ioutil.ReadAll(request.Body)
-	fmt.Println(string(body))
+	log.Println(request)
+	//body, _ := ioutil.ReadAll(request.Body)
+	//fmt.Println(string(body))
 }
