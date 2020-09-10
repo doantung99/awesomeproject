@@ -2,25 +2,28 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png">   -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <!-- <Test/> -->
+    <Test/>
     <!-- <Example1/> -->
-    <Example2/>
+    <!-- <Example2/> -->
+    <!-- <Example3/> -->
   </div>
 </template>
 
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
-//import Test from './components/Test.vue'
+import Test from './components/Test.vue'
 //import Example1 from './components/Example1.vue'
-import Example2 from './components/Example2.vue'
+//import Example2 from './components/Example2.vue'
+//import Example3 from './components/Example3.vue'
 
 export default {
   name: 'App',
   components: {
     //HelloWorld,
-    //Test
+    Test
     //Example1
-    Example2
+    //Example2
+    //Example3
   }
 }
 </script>
